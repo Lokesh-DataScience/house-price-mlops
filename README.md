@@ -1,6 +1,6 @@
 # 🏠 House Price Prediction API — MLOps Project
 
-[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688.svg)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4.0-F7931E.svg)](https://scikit-learn.org/)
@@ -121,11 +121,13 @@ house-price-mlops/
 ├── train/
 │   └── train_model.py       # Model training script
 │
-├── tests/
+├── test/
 │   └── test_api.py          # API unit tests
 │
 ├── Dockerfile               # Container build instructions
 ├── .dockerignore            # Files excluded from Docker context
+├── .gitattributes
+├── pyproject.toml           # Python dependecies (uv)
 ├── requirements.txt         # Python dependencies (pinned versions)
 ├── README.md                # You're reading it!
 └── LICENSE
@@ -137,7 +139,7 @@ house-price-mlops/
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.10+
 - Docker (for containerized deployment)
 - Git
 
@@ -299,14 +301,14 @@ curl -X POST 'http://localhost:8000/predict' \
 Run the test suite with:
 
 ```bash
-pytest tests/ -v
+pytest test/ -v
 ```
 
 **Expected output:**
 ```
-tests/test_api.py::test_health PASSED
-tests/test_api.py::test_predict_valid PASSED
-tests/test_api.py::test_predict_invalid PASSED
+test/test_api.py::test_health PASSED
+test/test_api.py::test_predict_valid PASSED
+test/test_api.py::test_predict_invalid PASSED
 ```
 
 ---
