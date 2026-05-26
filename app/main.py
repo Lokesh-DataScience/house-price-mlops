@@ -12,13 +12,15 @@ logger = get_logger(__name__)
 MODEL_VERSION = "v1.0.0"
 MODEL_PATH = os.getenv("MODEL_PATH", "app/model.pkl")
 
+# IMPORTANT FIX
+model = None
+
 app = FastAPI(
     title="🏠 House Price Prediction API",
     description="Production-ready ML API for predicting California house prices.",
     version=MODEL_VERSION,
 )
 
-# Load model at startup
 @app.on_event("startup")
 def load_model():
     global model
@@ -38,13 +40,18 @@ def health_check():
 def predict(features: HouseFeatures):
     try:
         logger.info(f"Received prediction request: {features.model_dump()}")
+
         input_array = preprocess_input(features.model_dump())
+
         prediction = model.predict(input_array)[0]
+
         logger.info(f"Prediction: {prediction:.4f}")
+
         return PredictionResponse(
             predicted_price=round(float(prediction), 4),
             model_version=MODEL_VERSION,
         )
+
     except Exception as e:
         logger.error(f"Prediction failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
