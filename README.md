@@ -93,7 +93,7 @@ This project predicts **median house prices in California** based on 8 input fea
 
 | Category | Technology |
 |----------|-----------|
-| **Language** | Python 3.11 |
+| **Language** | Python 3.10 |
 | **ML Framework** | scikit-learn 1.4.0 |
 | **API Framework** | FastAPI 0.110 |
 | **Server** | Uvicorn (ASGI) |
@@ -330,7 +330,7 @@ This project is ready to deploy to any platform that supports Docker:
 1. Push your code to GitHub
 2. Go to [render.com](https://render.com) → **New Web Service**
 3. Connect your repo → choose **Docker** environment
-4. Done ✅ You'll get a public URL like `https://house-price-api.onrender.com`
+4. Done ✅ You'll get a public URL like `https://house-price-mlops-m5v1.onrender.com`
 
 ---
 
