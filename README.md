@@ -1,5 +1,6 @@
 # 🏠 House Price Prediction API — MLOps Project
 
+[![CI/CD](https://github.com/<your-username>/house-price-mlops/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/<your-username>/house-price-mlops/actions)
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688.svg)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
@@ -354,7 +355,7 @@ Building this project taught me the core MLOps principles:
 Future enhancements I plan to add:
 
 - [ ] 🔬 Integrate **MLflow** for experiment tracking & model registry
-- [ ] 🤖 Set up **GitHub Actions** CI/CD pipeline
+- [✅] 🤖 Set up **GitHub Actions** CI/CD pipeline
 - [ ] 📊 Add **Prometheus + Grafana** monitoring
 - [ ] 📦 Implement **DVC** for data versioning
 - [ ] 🎨 Build a **Streamlit** frontend UI
