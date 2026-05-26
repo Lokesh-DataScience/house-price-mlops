@@ -1,6 +1,6 @@
 # 🏠 House Price Prediction API — MLOps Project
 
-[![CI/CD](https://github.com/<your-username>/house-price-mlops/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/<your-username>/house-price-mlops/actions)
+[![CI/CD](https://github.com/Lokesh-DataScience/house-price-mlops/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Lokesh-DataScience/house-price-mlops/actions)
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688.svg)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
