@@ -37,8 +37,8 @@ def health_check():
 @app.post("/predict", response_model=PredictionResponse)
 def predict(features: HouseFeatures):
     try:
-        logger.info(f"Received prediction request: {features.dict()}")
-        input_array = preprocess_input(features.dict())
+        logger.info(f"Received prediction request: {features.model_dump()}")
+        input_array = preprocess_input(features.model_dump())
         prediction = model.predict(input_array)[0]
         logger.info(f"Prediction: {prediction:.4f}")
         return PredictionResponse(

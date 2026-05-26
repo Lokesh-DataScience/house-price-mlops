@@ -1,9 +1,19 @@
 import pytest
+from unittest.mock import MagicMock
 from fastapi.testclient import TestClient
+import app.main
 from app.main import app
 
 @pytest.fixture
-def client():
+def client(monkeypatch):
+    """Create a TestClient with a mocked model."""
+    # Create a mock model that returns reasonable predictions
+    mock_model = MagicMock()
+    mock_model.predict.return_value = [100000.0]
+    
+    # Patch the global model in app.main
+    monkeypatch.setattr(app.main, 'model', mock_model)
+    
     return TestClient(app)
 
 def test_health(client):
