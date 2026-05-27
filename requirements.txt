@@ -9,3 +9,6 @@ httpx==0.25.0
 starlette==0.36.3
 pytest==9.0.3
 pytest-cov==7.1.0
+mlflow==2.11.1
+xgboost==2.0.3
+lightgbm==4.6.0

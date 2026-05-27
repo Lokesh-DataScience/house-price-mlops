@@ -1,9 +1,14 @@
-import numpy as np
+import pandas as pd
 
-def preprocess_input(features: dict) -> np.ndarray:
-    """Convert input dict to model-ready numpy array."""
-    feature_order = [
-        "MedInc", "HouseAge", "AveRooms", "AveBedrms",
-        "Population", "AveOccup", "Latitude", "Longitude"
-    ]
-    return np.array([[features[f] for f in feature_order]])
+# The order MUST match the training data column order
+FEATURE_ORDER = [
+    "MedInc", "HouseAge", "AveRooms", "AveBedrms",
+    "Population", "AveOccup", "Latitude", "Longitude"
+]
+
+def preprocess_input(features: dict) -> pd.DataFrame:
+    """
+    Convert input dict to a pandas DataFrame with named columns
+    matching the MLflow model signature.
+    """
+    return pd.DataFrame([{col: features[col] for col in FEATURE_ORDER}])
